@@ -1,8 +1,14 @@
 import React from 'react';
+import Task from './Task';
 
 const TaskList = () => {
   return (
-    <div>Lista Tasków</div>
+    <div>
+      <h3>Lista Tasków</h3>
+      <Task />
+      <Task />
+      <Task />
+    </div>
   );
 }
 
