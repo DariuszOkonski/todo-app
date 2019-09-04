@@ -1,2 +1,0 @@
-(window.webpackJsonp25_todo_app=window.webpackJsonp25_todo_app||[]).push([[0],[,,,function(n,e,o){n.exports=o(10)},,,,,function(n,e,o){},function(n,e,o){},function(n,e,o){"use strict";o.r(e);var t=o(0),a=o.n(t),p=o(2),c=o.n(p);o(8),o(9);var r=function(){return a.a.createElement("div",{className:"App"},"ToDo - app")};c.a.render(a.a.createElement(r,null),document.getElementById("root"))}],[[3,1,2]]]);
-//# sourceMappingURL=main.9146eeb5.chunk.js.map
