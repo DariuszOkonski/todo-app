@@ -19,17 +19,33 @@ class App extends Component {
   }
 
   deleteTask = (id) => {
-    console.log('delete w komponencie App: ' + id);
+    const tasks = [...this.state.tasks];
+    const index = tasks.findIndex(task => task.id === id);
+    tasks.splice(index, 1);
+
+    this.setState({
+      tasks
+    })
   }
 
   changeTaskStatus = (id) => {
-    console.log('change w komponencie App: ' + id);
+    let tasks = Array.from(this.state.tasks);
+    tasks.forEach(task => {
+      if (task.id === id) {
+        task.active = false;
+        task.finishDate = new Date().getTime();
+      }
+    });
+
+    this.setState({
+      tasks
+    })
   }
 
   render() {
     return (
       <div className="App">
-        ToDo - app
+        <h1>ToDo - app</h1>
         <AddTask />
 
         <TaskLIst tasks={this.state.tasks} delete={this.deleteTask} change={this.changeTaskStatus} />
