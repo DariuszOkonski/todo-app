@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import AddTask from './AddTask';
 import TaskLIst from './TaskList';
+import uuid from 'uuidv4';
 
 class App extends Component {
   state = {
@@ -42,11 +43,29 @@ class App extends Component {
     })
   }
 
+  addTask = (task) => {
+    const newTask = {
+      id: uuid(),
+      text: task.text,
+      date: task.date,
+      important: task.checked,
+      active: true,
+      finishDate: null
+    }
+
+    const tasks = [...this.state.tasks];
+    tasks.push(newTask);
+
+    this.setState({
+      tasks,
+    })
+  }
+
   render() {
     return (
       <div className="App">
-        <h1>ToDo - app</h1>
-        <AddTask />
+        <h1>ToDo - App</h1>
+        <AddTask onAddTask={this.addTask} />
 
         <TaskLIst tasks={this.state.tasks} delete={this.deleteTask} change={this.changeTaskStatus} />
       </div>
