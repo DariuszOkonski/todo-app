@@ -7,7 +7,7 @@ class AddTask extends Component {
     return (
       <div className="form">
         <div>
-          Dodaj task
+          Add Task
         </div>
         <hr />
       </div>
