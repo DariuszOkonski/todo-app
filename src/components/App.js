@@ -44,6 +44,7 @@ class App extends Component {
   }
 
   addTask = (task) => {
+
     const newTask = {
       id: uuid(),
       text: task.text,
@@ -53,21 +54,29 @@ class App extends Component {
       finishDate: null
     }
 
-    const tasks = [...this.state.tasks];
+    let tasks = [...this.state.tasks];
     tasks.push(newTask);
 
     this.setState({
       tasks,
-    })
+    });
   }
 
   render() {
     return (
       <div className="App">
         <h1>ToDo - App</h1>
-        <AddTask onAddTask={this.addTask} />
+        <hr />
 
-        <TaskLIst tasks={this.state.tasks} delete={this.deleteTask} change={this.changeTaskStatus} />
+        <AddTask
+          onAddTask={this.addTask}
+        />
+
+        <TaskLIst
+          tasks={this.state.tasks}
+          delete={this.deleteTask}
+          change={this.changeTaskStatus}
+        />
       </div>
     );
   }

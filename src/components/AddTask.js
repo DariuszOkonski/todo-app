@@ -13,7 +13,7 @@ class AddTask extends Component {
 
   handleText = (e) => {
     this.setState({
-      text: e.target.value,
+      text: e.target.value.toLowerCase()
     })
   }
 
